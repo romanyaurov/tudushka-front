@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@tudushka/widgets/*": ["widgets/*"],
+      "@tudushka/shared/*": ["shared/*"],
+      "@tudushka/pages/*": ["pages/*"]
+    }
+  }
+}
