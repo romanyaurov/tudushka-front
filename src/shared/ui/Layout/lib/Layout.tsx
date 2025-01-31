@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import styles from './Layout.module.css';
-import { Outlet, useLocation } from 'react-router-dom';
+import { useLocation, useOutlet } from 'react-router-dom';
 
 type LayoutProps = {
   header: ReactNode;
@@ -9,17 +9,20 @@ type LayoutProps = {
 
 export function Layout({ header, footer }: LayoutProps) {
   const location = useLocation();
-  const [currentPath, setCurrentPath] = useState(location.pathname);
-  const [prevPath, setPrevPath] = useState<string | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const newOutlet = useOutlet();
+  
+  const [currentOutlet, setCurrentOutlet] = useState<ReactNode>(newOutlet);
+  const [prevOutlet, setPrevOutlet] = useState<ReactNode | null>(null);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   useEffect(() => {
-    if (location.pathname !== currentPath) {
+    if (newOutlet !== currentOutlet) {
+      setPrevOutlet(currentOutlet);
+      setCurrentOutlet(newOutlet);
       setIsAnimating(true);
-      setPrevPath(currentPath);
 
       setTimeout(() => {
-        setCurrentPath(location.pathname);
+        setPrevOutlet(null);
         setIsAnimating(false);
       }, 500);
     }
@@ -29,13 +32,13 @@ export function Layout({ header, footer }: LayoutProps) {
     <div className={styles.root}>
       {header}
       <div className={styles.container}>
-        {prevPath && isAnimating && (
+        {prevOutlet && (
           <div className={`${styles.content} ${styles.slideOut}`}>
-            <Outlet key={prevPath} />
+            {prevOutlet}
           </div>
         )}
         <div className={`${styles.content} ${isAnimating ? styles.slideIn : ''}`}>
-          <Outlet key={currentPath} />
+          {currentOutlet}
         </div>
       </div>
       {footer}

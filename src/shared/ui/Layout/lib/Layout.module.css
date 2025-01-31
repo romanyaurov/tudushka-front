@@ -6,9 +6,6 @@
 }
 
 .container {
-  /* height: 100%;
-  padding: 0 1rem; */
-
   flex-grow: 1;
   overflow: hidden;
   position: relative;
@@ -18,12 +15,11 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: transform 0.5s ease-in-out;
+  padding: 0 1rem;
 }
 
 .slideIn {
-  transform: translateX(100%);
-  animation: slideIn .5s forwards;
+  animation: slideIn .5s ease-in-out forwards;
 }
 
 @keyframes slideIn {
@@ -36,8 +32,7 @@
 }
 
 .slideOut {
-  transform: translateX(0);
-  animation: slideOut .5s forwards;
+  animation: slideOut .5s ease-in-out forwards;
 }
 
 @keyframes slideOut {

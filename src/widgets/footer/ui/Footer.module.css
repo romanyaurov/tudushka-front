@@ -1,4 +1,18 @@
-.root {
+.footer {
   background-color: var(--orange-color);
   width: 100%;
+  padding: 1rem;
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .actionContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

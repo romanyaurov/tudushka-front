@@ -1,0 +1,43 @@
+.buttonContainer {
+  padding-bottom: 3px;
+
+  .button {
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    background: var(--yellow-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    border: 2px solid #000000;
+    box-shadow: 0 3px 0px 0px #000000;
+    transition: all 0.15s ease-in-out;
+
+    &:has(svg) {
+      padding: 0;
+      height: 41px;
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &.click {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 0 #000000;
+    }
+  }
+
+  &.fullWidth {
+    width: 100%;
+    
+    .button {
+      width: 100%;
+    }
+  }
+}

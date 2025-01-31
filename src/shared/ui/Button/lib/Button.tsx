@@ -1,40 +1,40 @@
-import { useState } from 'react';
-import './Button.css';
+import { ReactNode, useState } from 'react';
+import styles from './Button.module.css';
 
 interface Props {
-  text: string;
+  content?: string | ReactNode;
   fullWidth?: boolean;
+  active?: boolean;
   disabled?: boolean;
-  small?: boolean;
   onClick?: () => void;
 }
 
 export const Button = ({
-  text,
-  disabled = false,
+  content = '',
   fullWidth = false,
-  small = false,
-  onClick,
+  active = false,
+  disabled = false,
+  onClick = () => {console.log('click!')},
 }: Props) => {
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
     setIsClick(true);
-    onClick!();
+    if (onClick) onClick();
     setTimeout(() => {
       setIsClick(false);
-    }, 200);
+    }, 150);
   };
 
   return (
-    <div className={`button-container ${fullWidth ? 'full-width' : ''}`}>
+    <div className={`${styles.buttonContainer} ${fullWidth ? styles.fullWidth : ''}`}>
       <button 
         type="button"
         onClick={handleClick}
-        className={`button ${small ? 'small' : ''} ${isClick ? 'click' : ''}`}
+        className={`${styles.button} ${active ? styles.active : ''} ${isClick ? styles.click : ''} ${typeof content !== 'string' ? styles.contentInside : ''}`}
         disabled={disabled}
       >
-        {text}
+        {typeof content === 'string' ? <span>{content}</span> : content}
       </button>
     </div>
   );

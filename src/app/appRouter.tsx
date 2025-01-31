@@ -1,7 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
-import { baseLayout } from "./layouts/baseLayout";
-import { MainPage } from "@tudushka/pages/main";
-import { AboutPage } from "@tudushka/pages/about";
+import { createBrowserRouter } from 'react-router-dom';
+import { baseLayout } from './layouts/baseLayout';
+import { TodoListPage } from '@tudushka/pages/todo-list';
+import { AddTodoPage } from '@tudushka/pages/add-todo';
+import { ProfilePage } from '@tudushka/pages/profile';
 
 export function appRouter() {
   return createBrowserRouter([
@@ -11,13 +12,17 @@ export function appRouter() {
       children: [
         {
           path: '/',
-          element: <MainPage />
+          element: <TodoListPage />,
         },
         {
-          path: '/about',
-          element: <AboutPage />
-        }
-      ]
-    }
-  ])
+          path: '/add',
+          element: <AddTodoPage />,
+        },
+        {
+          path: '/profile',
+          element: <ProfilePage />,
+        },
+      ],
+    },
+  ]);
 }
