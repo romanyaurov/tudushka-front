@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
-import styles from './Layout.module.css';
 import { useLocation, useOutlet } from 'react-router-dom';
+import styles from './Layout.module.css';
 
 type LayoutProps = {
   header: ReactNode;

@@ -9,6 +9,8 @@
   flex-grow: 1;
   overflow: hidden;
   position: relative;
+  background: var(--grey-color);
+  padding: 1rem 0;
 }
 
 .content {

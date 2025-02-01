@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 import styles from './Button.module.css';
 
-interface Props {
+interface ButtonProps {
   content?: string | ReactNode;
   fullWidth?: boolean;
   active?: boolean;
@@ -15,7 +15,7 @@ export const Button = ({
   active = false,
   disabled = false,
   onClick = () => {console.log('click!')},
-}: Props) => {
+}: ButtonProps) => {
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {

@@ -1,0 +1,37 @@
+.input {
+  padding-bottom: 3px;
+
+  .inputLabel {
+    display: block;
+    width: 100%;
+    background-color: var(--orange-color);
+    overflow: hidden;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 1rem;
+    box-shadow: 0px 3px 0px 0px #000000;
+    border: 2px solid #000000;
+    border-radius: 0.8rem;
+
+    &:has(.inputIcon) {
+      padding: 0 1rem 0 0.5rem;
+    }
+
+    .inputIcon {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .inputField {
+      width: 100%;
+    }
+  }
+}

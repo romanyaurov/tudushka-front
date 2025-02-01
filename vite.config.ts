@@ -11,6 +11,7 @@ export default defineConfig({
       '@tudushka/shared': path.resolve(__dirname, 'src/shared'),
       '@tudushka/pages': path.resolve(__dirname, 'src/pages'),
       '@tudushka/features': path.resolve(__dirname, 'src/features'),
+      '@tudushka/entities': path.resolve(__dirname, 'src/entities'),
     },
   },
 });

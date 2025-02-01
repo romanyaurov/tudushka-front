@@ -5,7 +5,8 @@
       "@tudushka/widgets/*": ["widgets/*"],
       "@tudushka/shared/*": ["shared/*"],
       "@tudushka/pages/*": ["pages/*"],
-      "@tudushka/features/*": ["features/*"]
+      "@tudushka/features/*": ["features/*"],
+      "@tudushka/entities/*": ["entities/*"]
     }
   }
 }
