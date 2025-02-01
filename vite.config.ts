@@ -10,6 +10,7 @@ export default defineConfig({
       '@tudushka/widgets': path.resolve(__dirname, 'src/widgets'),
       '@tudushka/shared': path.resolve(__dirname, 'src/shared'),
       '@tudushka/pages': path.resolve(__dirname, 'src/pages'),
+      '@tudushka/features': path.resolve(__dirname, 'src/features'),
     },
   },
 });

@@ -1,4 +1,4 @@
-import { Layout } from "@tudushka/shared/ui/Layout";
+import { Layout } from "@tudushka/shared/ui";
 import { Footer } from "@tudushka/widgets/footer";
 import { Header } from "@tudushka/widgets/header";
 

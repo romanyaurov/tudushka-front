@@ -4,7 +4,8 @@
     "paths": {
       "@tudushka/widgets/*": ["widgets/*"],
       "@tudushka/shared/*": ["shared/*"],
-      "@tudushka/pages/*": ["pages/*"]
+      "@tudushka/pages/*": ["pages/*"],
+      "@tudushka/features/*": ["features/*"]
     }
   }
 }
