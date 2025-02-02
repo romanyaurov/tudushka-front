@@ -1,0 +1,24 @@
+.todoList {
+  list-style: none;
+  flex-grow: 1;
+
+  .todoItem {
+
+    &.rollIn {
+      animation: rollIn .3s ease-in-out forwards;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+@keyframes rollIn {
+  from {
+    transform: translateX(calc(-100% - 2rem));
+  }
+  to {
+    transform: translateX(0);
+  }
+}

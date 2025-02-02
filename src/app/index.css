@@ -80,6 +80,8 @@ button {
   font-family: 'Roboto Mono', sans-serif;
   font-weight: 700;
   font-style: normal;
+
+  background-color: transparent;
 }
 
 input {
