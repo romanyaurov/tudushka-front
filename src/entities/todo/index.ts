@@ -1,2 +1,11 @@
 export { TodoItem } from './ui/TodoItem';
-export { TodosReducer, addTodo, removeTodo, toggleTodo, toggleAddingAnimation, selectTodos } from './model/todoSlice';
+export {
+  TodosReducer,
+  addTodo,
+  removeTodo,
+  toggleTodo,
+  toggleTodoAdding,
+  toggleAddingAnimation,
+  selectTodos,
+  selectIsTodoAdding,
+} from './model/todoSlice';

@@ -1,5 +1,19 @@
 .addTodoForm {
-  div:not(:last-child) {
+
+  .inputWrapper {
     margin-bottom: 0.5rem;
+
+    &.rollOut {
+      animation: rollOut .3s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes rollOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% + 2rem));
   }
 }

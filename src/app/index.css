@@ -10,6 +10,7 @@
   --green-color: #4d9078;
   --rose-color: #b4436c;
   --grey-color: #ececec;
+  --darkgrey-color: #4a4a4a;
 
   /* box-sizing: border-box; */
   /* padding: 0; */
@@ -90,6 +91,10 @@ input {
   box-sizing: border-box;
   padding: 0;
   background-color: transparent;
+
+  &::placeholder {
+    color: var(--darkgrey-color);
+  }
 }
 
 input,

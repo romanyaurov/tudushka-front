@@ -3,6 +3,7 @@ import { TodoType } from '@tudushka/shared/models';
 
 interface TodoSliceInterface {
   todos: TodoType[];
+  isTodoAdding: boolean;
 }
 
 const initialState: TodoSliceInterface = {
@@ -23,7 +24,7 @@ const initialState: TodoSliceInterface = {
       text: 'One more time do something',
     },
   ],
-  // todos: []
+  isTodoAdding: false,
 };
 
 const todosSlice = createSlice({
@@ -32,6 +33,7 @@ const todosSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       state.todos.unshift(action.payload);
+      state.isTodoAdding = true;
     },
     removeTodo: (state, action) => {
       return {
@@ -43,6 +45,9 @@ const todosSlice = createSlice({
       state.todos.forEach((todo) => {
         if (todo.id === action.payload) todo.isCompleted = !todo.isCompleted;
       });
+    },
+    toggleTodoAdding: (state) => {
+      state.isTodoAdding = !state.isTodoAdding;
     },
     toggleAddingAnimation: (state, action) => {
       return {
@@ -59,9 +64,15 @@ const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo, toggleTodo, toggleAddingAnimation } =
-  todosSlice.actions;
+export const {
+  addTodo,
+  removeTodo,
+  toggleTodo,
+  toggleTodoAdding,
+  toggleAddingAnimation,
+} = todosSlice.actions;
 
 export const selectTodos = (state: any) => state.todos.todos;
+export const selectIsTodoAdding = (state: any) => state.todos.isTodoAdding;
 
 export const TodosReducer = todosSlice.reducer;

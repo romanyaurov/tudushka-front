@@ -34,4 +34,17 @@
       width: 100%;
     }
   }
+
+  &.rollOut {
+    animation: rollOut .3s ease-in-out forwards;
+  }
+}
+
+@keyframes rollOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100% + 2rem));
+  }
 }
